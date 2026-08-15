@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
+  --color-purple: #7B2D6E;
+  --color-purple-dark: #5A1F50;
+  --color-purple-deep: #3D1238;
+  --color-purple-pale: #F7EFF6;
+  --color-purple-mid: rgba(123, 45, 110, 0.08);
+
+  --color-green: #7DB832;
+  --color-green-dark: #5E8E22;
+  --color-green-light: #9ED44F;
+  --color-green-pale: #EFF7E4;
+
+  --color-primary: #7B2D6E;
+  --color-primary-dark: #5A1F50;
+  --color-primary-deep: #3D1238;
+  --color-primary-light: #9ED44F;
+  --color-accent: #7DB832;
+  --color-accent-dark: #5E8E22;
+  --color-accent-light: #9ED44F;
+
+  --color-off-white: #FDFCFE;
+  --color-light-bg: #F8F2F8;
+
+  --color-text-main: #1E0C1B;
+  --color-text-mid: #5A3D56;
+  --color-text-light: #9B7A96;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-dm-sans), sans-serif;
+  --font-serif: var(--font-playfair), serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #FDFCFE;
+  --foreground: #1E0C1B;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@keyframes fabPulse {
+  0%, 100% {
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.44);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.44), 0 0 0 12px rgba(37, 211, 102, 0.12);
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(45deg) translateY(5px);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.animate-fab-pulse {
+  animation: fabPulse 2.5s ease infinite;
+}
+
+.animate-scroll-bounce {
+  animation: scrollBounce 2s ease infinite;
+}
+
+.animate-badge-blink {
+  animation: blink 1.8s ease infinite;
+}
+
+@utility container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }

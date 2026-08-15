@@ -1,0 +1,75 @@
+export const company = {
+  name: "Dzanis Katering",
+  brandName: "Dzanis Katering",
+  legalName: "PT Dzanis Katering Indonesia",
+  tagline: "Jasa Catering Puncak, Bogor & Jabodetabek — Halal MUI",
+  description:
+    "Dzanis Katering menyediakan nasi box, prasmanan, snack, kambing guling & liwetan untuk acara di Puncak, Bogor, dan Jabodetabek. Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
+  establishedYear: 2013,
+  contact: {
+    whatsapp: "081286803447",
+    whatsappLink: "https://wa.me/6281286803447?text=Halo%20Dzanis%20Katering%2C%20saya%20mau%20tanya%20catering%20untuk%20acara%20saya.%20Bisa%20dibantu%3F",
+    phone: "(0251) 829-8060",
+    phoneRaw: "02518298060",
+    email: "catering@dzanis.com",
+    address: "Jl. Raya Puncak KM 77, Cisarua, Bogor, Jawa Barat",
+    operatingHours: "Setiap hari · 07.00 – 22.00 WIB",
+  },
+  stats: {
+    experience: "10+",
+    experienceLabel: "Tahun",
+    events: "3rb+",
+    eventsLabel: "Acara/tahun",
+    rating: "4.9",
+    ratingLabel: "Google",
+    onTime: "100%",
+    onTimeLabel: "On-time",
+  },
+  halal: {
+    certified: true,
+    certNumber: "ID32110022120450525",
+    logo: "/images/brand/halal-cert.png",
+  },
+  socials: {
+    instagram: "https://www.instagram.com/dzaniskatering/",
+    facebook: "https://facebook.com/dzaniskatering",
+  },
+  serviceAreas: [
+    {
+      name: "Puncak & Cisarua",
+      type: "Basis Utama",
+      isPrimary: true,
+      cities: "Puncak Pass · Cisarua · Megamendung · Tugu · Ciawi · Gadog · Sekitar vila & resort",
+    },
+    {
+      name: "Bogor & Sentul",
+      type: "Basis Utama",
+      isPrimary: true,
+      cities: "Bogor Kota · Cibinong · Sentul City · Babakan Madang · Bogor Raya",
+    },
+    {
+      name: "Depok",
+      type: "Area Layanan",
+      isPrimary: false,
+      cities: "Depok Kota · Margonda · Cinere · Cimanggis · Sawangan",
+    },
+    {
+      name: "Bekasi",
+      type: "Area Layanan",
+      isPrimary: false,
+      cities: "Bekasi Kota · Kabupaten Bekasi · Cileungsi · Gunung Putri",
+    },
+    {
+      name: "Tangerang",
+      type: "Area Layanan",
+      isPrimary: false,
+      cities: "Tangerang Kota · Tangerang Selatan · Serpong · BSD",
+    },
+    {
+      name: "Jakarta",
+      type: "Area Layanan",
+      isPrimary: false,
+      cities: "Jakarta Selatan · Jakarta Timur · Untuk acara besar, kami jangkau lebih jauh",
+    },
+  ],
+};
