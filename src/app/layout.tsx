@@ -52,7 +52,7 @@ export default function RootLayout({
       lang="id"
       className={`${dmSans.variable} ${playfair.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col bg-[#FDFCFE] text-[#1E0C1B] antialiased">
+      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
         {children}
         <FloatingWhatsApp />
       </body>

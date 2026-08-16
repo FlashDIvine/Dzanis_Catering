@@ -10,12 +10,12 @@ import { cn } from "@/lib/utils";
 
 export function Gallery() {
   return (
-    <Container id="galeri" className="bg-[#F8F2F8]">
+    <Container id="galeri" className="bg-light-bg">
       <SectionHeading
         badge="Galeri"
         title={
           <>
-            Foto <em className="italic text-[#5E8E22]">Produk & Acara</em>
+            Foto <em className="italic text-accent-dark">Produk & Acara</em>
           </>
         }
         description="Sekilas tampilan hidangan dan momen kebersamaan yang telah kami layani."
@@ -54,7 +54,7 @@ export function Gallery() {
           href={company.socials.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-[#7B2D6E] font-semibold text-[0.88rem] border-[1.5px] border-[#7B2D6E]/20 px-6 py-2.5 rounded-full transition-all duration-300 hover:bg-[#7B2D6E] hover:text-white"
+          className="inline-flex items-center gap-2 text-primary font-semibold text-[0.88rem] border-[1.5px] border-primary/20 px-6 py-2.5 rounded-full transition-all duration-300 hover:bg-primary hover:text-white"
         >
           Lihat lebih banyak di Instagram →
         </a>

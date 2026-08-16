@@ -1,10 +1,12 @@
 export const company = {
-  name: "Dzanis Katering",
-  brandName: "Dzanis Katering",
-  legalName: "PT Dzanis Katering Indonesia",
+  name: "Dzanis Catering",
+  brandName: "Dzanis Catering",
+  legalName: "PT Dzanis Catering Indonesia",
+  logo: "/images/brand/dzanis-logo.png",
+  logoLight: "/images/brand/dzanis-logo-light.png",
   tagline: "Jasa Catering Puncak, Bogor & Jabodetabek — Halal MUI",
   description:
-    "Dzanis Katering menyediakan nasi box, prasmanan, snack, kambing guling & liwetan untuk acara di Puncak, Bogor, dan Jabodetabek. Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
+    "Dzanis Catering menyediakan nasi box, prasmanan, snack, kambing guling & liwetan untuk acara di Puncak, Bogor, dan Jabodetabek. Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
   establishedYear: 2013,
   contact: {
     whatsapp: "081286803447",

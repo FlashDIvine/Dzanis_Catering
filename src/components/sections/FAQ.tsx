@@ -11,12 +11,12 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <Container id="faq" className="bg-[#F8F2F8]">
+    <Container id="faq" className="bg-light-bg">
       <SectionHeading
         badge="FAQ"
         title={
           <>
-            Pertanyaan yang Sering <em className="italic text-[#5E8E22]">Diajukan</em>
+            Pertanyaan yang Sering <em className="italic text-accent-dark">Diajukan</em>
           </>
         }
         description="Temukan jawaban cepat untuk pertanyaan umum seputar layanan catering kami."
@@ -31,17 +31,17 @@ export function FAQ() {
               key={faq.id}
               className={`bg-white rounded-2xl border transition-all duration-300 ${
                 isOpen
-                  ? "border-[#7B2D6E]/25 shadow-[0_4px_20px_rgba(123,45,110,0.08)]"
-                  : "border-[#7B2D6E]/10"
+                  ? "border-primary/30 shadow-[0_4px_20px_rgba(26,91,150,0.08)]"
+                  : "border-primary/10"
               }`}
             >
               <button
-                className="w-full flex items-center justify-between p-5 md:p-6 text-left"
+                className="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
               >
                 <span
                   className={`font-semibold text-base md:text-[1.05rem] pr-4 transition-colors ${
-                    isOpen ? "text-[#7B2D6E]" : "text-[#1E0C1B]"
+                    isOpen ? "text-primary" : "text-foreground"
                   }`}
                 >
                   {faq.question}
@@ -49,8 +49,8 @@ export function FAQ() {
                 <span
                   className={`flex items-center justify-center w-7 h-7 rounded-full shrink-0 transition-colors ${
                     isOpen
-                      ? "bg-[#7B2D6E] text-white"
-                      : "bg-[#F7EFF6] text-[#7B2D6E]"
+                      ? "bg-primary text-white"
+                      : "bg-primary-pale text-primary"
                   }`}
                 >
                   {isOpen ? <Minus size={16} /> : <Plus size={16} />}
@@ -66,7 +66,7 @@ export function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 md:px-6 pb-5 md:pb-6 text-[#5A3D56] text-[0.9rem] leading-[1.75] border-t border-[#7B2D6E]/[0.06] pt-3.5">
+                    <div className="px-5 md:px-6 pb-5 md:pb-6 text-text-mid text-[0.9rem] leading-[1.75] border-t border-primary/[0.06] pt-3.5">
                       {faq.answer}
                     </div>
                   </motion.div>

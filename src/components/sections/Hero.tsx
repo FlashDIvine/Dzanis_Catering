@@ -8,16 +8,16 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-end overflow-hidden pt-28 pb-20 md:pb-24">
       {/* Background Gradient & Food Photography Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#3D1238] via-[#5A1F50] to-[#4A1840]" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-deep via-primary-dark to-[#0D3560]" />
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-20 mix-blend-luminosity pointer-events-none"
         style={{ backgroundImage: `url(${heroData.image})` }}
       />
 
       {/* Decorative Geometric Rings and Radial Glow */}
-      <div className="absolute -right-24 -top-24 w-[700px] h-[700px] rounded-full border border-[#7DB832]/10 pointer-events-none" />
-      <div className="absolute right-20 top-20 w-[420px] h-[420px] rounded-full border-[60px] border-[#7B2D6E]/15 pointer-events-none" />
-      <div className="absolute -left-16 -bottom-16 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(125,184,50,0.12)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute -right-24 -top-24 w-[700px] h-[700px] rounded-full border border-accent/15 pointer-events-none" />
+      <div className="absolute right-20 top-20 w-[420px] h-[420px] rounded-full border-[60px] border-primary/20 pointer-events-none" />
+      <div className="absolute -left-16 -bottom-16 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(16,185,129,0.12)_0%,transparent_65%)] pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-[1360px] mx-auto px-6 md:px-16">
         <div className="grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-16 items-end">
@@ -29,14 +29,14 @@ export function Hero() {
             className="flex flex-col items-start"
           >
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#7DB832]/25 bg-[#7DB832]/12 px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[1.5px] text-[#9ED44F] mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#7DB832] animate-badge-blink" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/12 px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[1.5px] text-accent-light mb-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-badge-blink" />
               {heroData.eyebrow}
             </div>
 
             {/* Main Headline */}
             <h1 className="font-serif text-[clamp(2.7rem,5.5vw,4.6rem)] font-bold leading-[1.06] text-white mb-5">
-              {heroData.headline.line1} <em className="italic text-[#9ED44F] font-serif not-italic-fallback">{heroData.headline.accent}</em> <br className="hidden sm:inline" />
+              {heroData.headline.line1} <em className="italic text-accent-light font-serif not-italic-fallback">{heroData.headline.accent}</em> <br className="hidden sm:inline" />
               {heroData.headline.line2}
             </h1>
 
@@ -84,9 +84,9 @@ export function Hero() {
                 {heroData.trustCard.stats.map((stat, i) => (
                   <div
                     key={i}
-                    className="bg-[#7DB832]/10 border border-[#7DB832]/20 rounded-2xl p-4 text-center"
+                    className="bg-accent/10 border border-accent/20 rounded-2xl p-4 text-center"
                   >
-                    <strong className="block font-serif text-[1.9rem] font-bold text-[#9ED44F] leading-none mb-1">
+                    <strong className="block font-serif text-[1.9rem] font-bold text-accent-light leading-none mb-1">
                       {stat.value}
                     </strong>
                     <span className="text-[0.68rem] text-white/45 uppercase tracking-[0.8px] font-semibold">

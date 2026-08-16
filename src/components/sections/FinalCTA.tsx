@@ -6,9 +6,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function FinalCTA() {
   return (
-    <div className="w-full relative overflow-hidden bg-gradient-to-br from-[#3D1238] via-[#5A1F50] to-[#521B4A]">
+    <div className="w-full relative overflow-hidden bg-gradient-to-br from-primary-deep via-primary-dark to-[#0D3560]">
       {/* Decorative Radial Glow */}
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(125,184,50,0.09)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.09)_0%,transparent_65%)] pointer-events-none" />
 
       <Container id="kontak" className="bg-transparent">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -19,7 +19,7 @@ export function FinalCTA() {
               badge="Hubungi Kami"
               title={
                 <>
-                  Siap Melayani <em className="italic text-[#9ED44F]">Acara Anda?</em>
+                  Siap Melayani <em className="italic text-accent-light">Acara Anda?</em>
                 </>
               }
               description="Konsultasi gratis, food tasting gratis. Percayakan kebutuhan catering acara Anda kepada ahlinya sejak 2013."
@@ -34,7 +34,7 @@ export function FinalCTA() {
                   href={company.contact.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 hover:text-[#9ED44F] text-[0.88rem] transition-colors"
+                  className="text-white/70 hover:text-accent-light text-[0.88rem] transition-colors"
                 >
                   {company.contact.whatsapp} (WhatsApp)
                 </a>
@@ -46,7 +46,7 @@ export function FinalCTA() {
                 </div>
                 <a
                   href={`tel:${company.contact.phoneRaw}`}
-                  className="text-white/70 hover:text-[#9ED44F] text-[0.88rem] transition-colors"
+                  className="text-white/70 hover:text-accent-light text-[0.88rem] transition-colors"
                 >
                   {company.contact.phone}
                 </a>

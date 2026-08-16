@@ -32,7 +32,7 @@ export function SectionHeading({
       <h2
         className={cn(
           "font-serif text-[clamp(1.9rem,3.2vw,2.7rem)] font-bold leading-[1.2]",
-          isDark ? "text-white" : "text-[#5A1F50]"
+          isDark ? "text-white" : "text-primary-dark"
         )}
       >
         {title}
@@ -41,7 +41,7 @@ export function SectionHeading({
         <p
           className={cn(
             "max-w-[520px] text-[0.95rem] leading-[1.85]",
-            isDark ? "text-white/50" : "text-[#5A3D56]"
+            isDark ? "text-white/60" : "text-text-mid"
           )}
         >
           {description}

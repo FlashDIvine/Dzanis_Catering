@@ -10,12 +10,12 @@ import { cn } from "@/lib/utils";
 
 export function Services() {
   return (
-    <Container id="layanan" className="bg-[#FDFCFE]">
+    <Container id="layanan" className="bg-background">
       <SectionHeading
         badge="Layanan Kami"
         title={
           <>
-            Menu untuk <em className="italic text-[#5E8E22]">Semua Jenis Acara</em>
+            Menu untuk <em className="italic text-accent-dark">Semua Jenis Acara</em>
           </>
         }
         description="Dari sarapan pagi harian hingga pesta pernikahan — kami hadir dengan pilihan menu yang sesuai kebutuhan dan anggaran Anda."
@@ -49,8 +49,8 @@ export function Services() {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3D1238]/95 via-[#3D1238]/20 to-transparent flex flex-col justify-end p-6 md:p-7 transition-all duration-400 group-hover:from-[#3D1238]/98 group-hover:via-[#3D1238]/60 group-hover:to-[#3D1238]/10">
-                <div className="text-[#9ED44F] text-[0.65rem] font-bold tracking-[2px] uppercase mb-1.5 opacity-90">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/95 via-primary-deep/20 to-transparent flex flex-col justify-end p-6 md:p-7 transition-all duration-400 group-hover:from-primary-deep/98 group-hover:via-primary-deep/60 group-hover:to-primary-deep/10">
+                <div className="text-accent-light text-[0.65rem] font-bold tracking-[2px] uppercase mb-1.5 opacity-90">
                   {`${service.categoryNumber} · ${service.categoryTag}`}
                 </div>
 
@@ -69,14 +69,14 @@ export function Services() {
                     href={service.linkHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[#9ED44F] hover:text-white text-[0.8rem] font-semibold mt-3 opacity-0 translate-y-2 transition-all duration-350 delay-75 group-hover:opacity-100 group-hover:translate-y-0"
+                    className="inline-flex items-center gap-1.5 text-accent-light hover:text-white text-[0.8rem] font-semibold mt-3 opacity-0 translate-y-2 transition-all duration-350 delay-75 group-hover:opacity-100 group-hover:translate-y-0"
                   >
                     {service.linkText}
                   </a>
                 ) : (
                   <Link
                     href={service.linkHref}
-                    className="inline-flex items-center gap-1.5 text-[#9ED44F] hover:text-white text-[0.8rem] font-semibold mt-3 opacity-0 translate-y-2 transition-all duration-350 delay-75 group-hover:opacity-100 group-hover:translate-y-0"
+                    className="inline-flex items-center gap-1.5 text-accent-light hover:text-white text-[0.8rem] font-semibold mt-3 opacity-0 translate-y-2 transition-all duration-350 delay-75 group-hover:opacity-100 group-hover:translate-y-0"
                   >
                     {service.linkText}
                   </Link>

@@ -13,11 +13,24 @@ export function Badge({
     return (
       <div
         className={cn(
-          "inline-flex items-center gap-2 rounded-full border border-[rgba(125,184,50,0.25)] bg-[rgba(125,184,50,0.12)] px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[1.5px] text-[#9ED44F]",
+          "inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/12 px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[1.5px] text-accent-light",
           className
         )}
       >
-        <span className="h-1.5 w-1.5 rounded-full bg-[#7DB832] animate-badge-blink" />
+        <span className="h-1.5 w-1.5 rounded-full bg-accent animate-badge-blink" />
+        {children}
+      </div>
+    );
+  }
+
+  if (variant === "pill") {
+    return (
+      <div
+        className={cn(
+          "inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent-pale px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[1px] text-accent-dark",
+          className
+        )}
+      >
         {children}
       </div>
     );
@@ -26,11 +39,11 @@ export function Badge({
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-2.5 text-[0.72rem] font-bold uppercase tracking-[2px] text-[#5E8E22]",
+        "inline-flex items-center gap-2.5 text-[0.72rem] font-bold uppercase tracking-[2px] text-accent-dark",
         className
       )}
     >
-      <span className="h-[2px] w-6 rounded-full bg-[#7DB832]" />
+      <span className="h-[2px] w-6 rounded-full bg-accent" />
       {children}
     </div>
   );

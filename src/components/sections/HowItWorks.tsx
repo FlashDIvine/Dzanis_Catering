@@ -29,12 +29,12 @@ export function HowItWorks() {
   ];
 
   return (
-    <Container id="cara-pesan" className="bg-[#F8F2F8]">
+    <Container id="cara-pesan" className="bg-light-bg">
       <SectionHeading
         badge="Cara Pemesanan"
         title={
           <>
-            Langkah Mudah <em className="italic text-[#5E8E22]">Memesan</em>
+            Langkah Mudah <em className="italic text-accent-dark">Memesan</em>
           </>
         }
         description="Proses pemesanan yang sederhana, cepat, dan transparan untuk kenyamanan Anda."
@@ -48,16 +48,16 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.08 }}
-            className="relative flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-[#7B2D6E]/10 shadow-sm"
+            className="relative flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-primary/10 shadow-sm"
           >
-            <div className="w-16 h-16 rounded-2xl bg-[#F7EFF6] flex items-center justify-center mb-4 text-2xl font-serif font-bold text-[#7B2D6E]">
+            <div className="w-16 h-16 rounded-2xl bg-primary-pale flex items-center justify-center mb-4 text-2xl font-serif font-bold text-primary">
               {step.number}
             </div>
 
-            <h3 className="text-[1.05rem] font-bold text-[#1E0C1B] mb-2">
+            <h3 className="text-[1.05rem] font-bold text-foreground mb-2">
               {step.title}
             </h3>
-            <p className="text-[0.82rem] text-[#5A3D56] leading-relaxed">
+            <p className="text-[0.82rem] text-text-mid leading-relaxed">
               {step.description}
             </p>
           </motion.div>
