@@ -13,75 +13,67 @@ export function Services() {
     <Container id="layanan" className="bg-background">
       <SectionHeading
         badge="Layanan Kami"
-        title={
-          <>
-            Menu untuk <em className="italic text-accent-dark">Semua Jenis Acara</em>
-          </>
-        }
+        title="Menu untuk semua jenis acara"
         description="Dari sarapan pagi harian hingga pesta pernikahan — kami hadir dengan pilihan menu yang sesuai kebutuhan dan anggaran Anda."
       />
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-[3px] rounded-[20px] overflow-hidden">
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {services.map((service, index) => {
           const isWide = service.isWide;
+          const isExternal = service.linkHref.startsWith("http");
+          const CardTag = isExternal ? "a" : Link;
+          const linkProps = isExternal
+            ? { href: service.linkHref, target: "_blank", rel: "noopener noreferrer" }
+            : { href: service.linkHref };
 
           return (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className={cn(
-                "relative overflow-hidden group cursor-pointer",
-                isWide
-                  ? "md:col-span-2 aspect-[4/3] sm:aspect-[16/9] md:aspect-[8/5]"
-                  : "aspect-[4/3] sm:aspect-[4/5]"
-              )}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              className={cn(isWide && "sm:col-span-2 md:col-span-2")}
             >
-              {/* Background Food Image */}
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-all duration-700 brightness-[0.65] saturate-75 group-hover:scale-[1.07] group-hover:brightness-[0.4] group-hover:saturate-50"
-              />
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/95 via-primary-deep/20 to-transparent flex flex-col justify-end p-6 md:p-7 transition-all duration-400 group-hover:from-primary-deep/98 group-hover:via-primary-deep/60 group-hover:to-primary-deep/10">
-                <div className="text-accent-light text-[0.65rem] font-bold tracking-[2px] uppercase mb-1.5 opacity-90">
-                  {`${service.categoryNumber} · ${service.categoryTag}`}
+              <CardTag
+                {...linkProps}
+                className="group block"
+              >
+                {/* Food photograph — bright and appetizing */}
+                <div
+                  className={cn(
+                    "relative overflow-hidden rounded-xl",
+                    isWide ? "aspect-[16/10] md:aspect-[16/9]" : "aspect-[4/3]"
+                  )}
+                >
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 45vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/45 to-transparent" />
+                  <span className="absolute left-4 top-4 text-[0.62rem] font-semibold uppercase tracking-[1.5px] text-white/90">
+                    {service.categoryTag}
+                  </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-semibold text-white mb-2">
-                  {service.title}
-                </h3>
-
-                <div className="max-h-0 overflow-hidden transition-all duration-500 opacity-0 group-hover:max-h-28 group-hover:opacity-100">
-                  <p className="text-white/60 text-[0.82rem] leading-[1.65]">
-                    {service.description}
-                  </p>
+                {/* Caption sits below the image — content, not chrome */}
+                <div className="mt-4 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-serif text-xl font-semibold text-primary-dark">
+                      {service.title}
+                    </h3>
+                    <p className="mt-1.5 text-[0.85rem] leading-[1.7] text-text-mid">
+                      {service.description}
+                    </p>
+                  </div>
+                  <span className="mt-1 shrink-0 text-accent-dark transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
                 </div>
-
-                {service.linkHref.startsWith("http") ? (
-                  <a
-                    href={service.linkHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-accent-light hover:text-white text-[0.8rem] font-semibold mt-3 opacity-0 translate-y-2 transition-all duration-350 delay-75 group-hover:opacity-100 group-hover:translate-y-0"
-                  >
-                    {service.linkText}
-                  </a>
-                ) : (
-                  <Link
-                    href={service.linkHref}
-                    className="inline-flex items-center gap-1.5 text-accent-light hover:text-white text-[0.8rem] font-semibold mt-3 opacity-0 translate-y-2 transition-all duration-350 delay-75 group-hover:opacity-100 group-hover:translate-y-0"
-                  >
-                    {service.linkText}
-                  </Link>
-                )}
-              </div>
+              </CardTag>
             </motion.div>
           );
         })}

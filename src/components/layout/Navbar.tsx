@@ -90,9 +90,9 @@ export function Navbar() {
             href={company.contact.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-full text-[0.82rem] font-semibold shadow-[0_4px_16px_rgba(37,211,102,0.35)] transition-all duration-200 hover:bg-[#1db954] hover:-translate-y-0.5"
+            className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-full text-[0.82rem] font-semibold transition-colors duration-200 hover:bg-[#1db954]"
           >
-            <span>💬</span> Pesan Sekarang
+            Pesan Sekarang
           </a>
         </div>
 
@@ -126,10 +126,10 @@ export function Navbar() {
             href={company.contact.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 flex items-center justify-center gap-2 px-5 py-3 bg-[#25D366] text-white rounded-xl text-sm font-semibold shadow-[0_4px_16px_rgba(37,211,102,0.35)]"
+            className="mt-2 flex items-center justify-center gap-2 px-5 py-3 bg-[#25D366] text-white rounded-xl text-sm font-semibold"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <span>💬</span> Pesan Sekarang via WhatsApp
+            Pesan Sekarang via WhatsApp
           </a>
         </div>
       )}

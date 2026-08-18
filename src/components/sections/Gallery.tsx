@@ -13,15 +13,11 @@ export function Gallery() {
     <Container id="galeri" className="bg-light-bg">
       <SectionHeading
         badge="Galeri"
-        title={
-          <>
-            Foto <em className="italic text-accent-dark">Produk & Acara</em>
-          </>
-        }
+        title="Foto produk & acara"
         description="Sekilas tampilan hidangan dan momen kebersamaan yang telah kami layani."
       />
 
-      <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1 rounded-2xl overflow-hidden mb-8">
+      <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mb-8">
         {gallery.map((img, index) => {
           const isTall = img.isTall;
 
@@ -33,7 +29,7 @@ export function Gallery() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className={cn(
-                "relative overflow-hidden cursor-pointer group bg-black/5",
+                "relative overflow-hidden rounded-lg cursor-pointer group bg-black/5",
                 isTall ? "col-span-2 sm:col-span-1 lg:col-span-1 lg:row-span-2 aspect-[4/3] sm:aspect-square lg:aspect-[1/2]" : "aspect-square"
               )}
             >
@@ -42,7 +38,7 @@ export function Gallery() {
                 alt={img.alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 20vw"
-                className="object-cover transition-all duration-500 brightness-90 group-hover:scale-[1.08] group-hover:brightness-100"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
               />
             </motion.div>
           );

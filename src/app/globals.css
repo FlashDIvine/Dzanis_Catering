@@ -17,7 +17,9 @@
   --color-gold-light: #F59E0B;
 
   --color-off-white: #FFFFFF;
-  --color-light-bg: #F4F8FB;
+  --color-light-bg: #F6F5F1;
+  --color-warm: #FBFAF7;
+  --color-line: #E7E4DC;
 
   --color-text-main: #0F172A;
   --color-text-mid: #475569;
@@ -42,15 +44,6 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes fabPulse {
-  0%, 100% {
-    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.44);
-  }
-  50% {
-    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.44), 0 0 0 12px rgba(37, 211, 102, 0.12);
-  }
-}
-
 @keyframes scrollBounce {
   0%, 100% {
     transform: rotate(45deg) translateY(0);
@@ -60,25 +53,14 @@ body {
   }
 }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-}
-
-.animate-fab-pulse {
-  animation: fabPulse 2.5s ease infinite;
-}
-
 .animate-scroll-bounce {
   animation: scrollBounce 2s ease infinite;
 }
 
-.animate-badge-blink {
-  animation: blink 1.8s ease infinite;
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-bounce {
+    animation: none;
+  }
 }
 
 @utility container-custom {

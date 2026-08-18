@@ -16,17 +16,17 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 active:scale-95",
+        "inline-flex items-center justify-center rounded-full font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
         {
-          "bg-primary text-white hover:bg-primary-dark shadow-[0_6px_22px_rgba(26,91,150,0.22)] hover:-translate-y-0.5":
+          "bg-primary text-white hover:bg-primary-dark":
             variant === "primary",
-          "bg-primary-dark text-white hover:bg-primary-deep shadow-md hover:-translate-y-0.5":
+          "bg-primary-dark text-white hover:bg-primary-deep":
             variant === "secondary",
-          "bg-[#25D366] text-white hover:bg-[#1db954] shadow-[0_8px_28px_rgba(37,211,102,0.38)] hover:-translate-y-0.5":
+          "bg-[#25D366] text-white hover:bg-[#1db954]":
             variant === "whatsapp",
-          "border-[1.5px] border-white/25 text-white/85 hover:bg-white/10 hover:text-white":
+          "border border-white/25 text-white/85 hover:bg-white/10 hover:text-white":
             variant === "ghost",
-          "border-[1.5px] border-primary/25 text-primary hover:bg-primary hover:text-white":
+          "border border-primary/25 text-primary hover:bg-primary hover:text-white":
             variant === "outline",
           "px-4 py-2 text-xs": size === "sm",
           "px-6 py-3 text-sm": size === "md",

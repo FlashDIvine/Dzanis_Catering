@@ -22,8 +22,8 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "fixed bottom-[26px] right-[26px] z-[300] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_28px_rgba(37,211,102,0.44)] transition-all duration-300 hover:scale-110 hover:bg-[#1db954] animate-fab-pulse",
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0 pointer-events-none"
+        "fixed bottom-6 right-6 z-[300] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_16px_rgba(0,0,0,0.18)] transition-all duration-300 hover:bg-[#1db954]",
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0 pointer-events-none"
       )}
       aria-label="Chat WhatsApp Dzanis Katering"
     >

@@ -14,46 +14,30 @@ export function FAQ() {
     <Container id="faq" className="bg-light-bg">
       <SectionHeading
         badge="FAQ"
-        title={
-          <>
-            Pertanyaan yang Sering <em className="italic text-accent-dark">Diajukan</em>
-          </>
-        }
+        title="Pertanyaan yang sering diajukan"
         description="Temukan jawaban cepat untuk pertanyaan umum seputar layanan catering kami."
       />
 
-      <div className="mt-12 max-w-3xl mx-auto flex flex-col gap-3">
+      <div className="mt-12 max-w-3xl mx-auto flex flex-col border-t border-line">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
 
           return (
-            <div
-              key={faq.id}
-              className={`bg-white rounded-2xl border transition-all duration-300 ${
-                isOpen
-                  ? "border-primary/30 shadow-[0_4px_20px_rgba(26,91,150,0.08)]"
-                  : "border-primary/10"
-              }`}
-            >
+            <div key={faq.id} className="border-b border-line">
               <button
-                className="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer"
+                className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
+                aria-expanded={isOpen}
               >
                 <span
-                  className={`font-semibold text-base md:text-[1.05rem] pr-4 transition-colors ${
+                  className={`font-medium text-base md:text-[1.05rem] transition-colors ${
                     isOpen ? "text-primary" : "text-foreground"
                   }`}
                 >
                   {faq.question}
                 </span>
-                <span
-                  className={`flex items-center justify-center w-7 h-7 rounded-full shrink-0 transition-colors ${
-                    isOpen
-                      ? "bg-primary text-white"
-                      : "bg-primary-pale text-primary"
-                  }`}
-                >
-                  {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                <span className="flex shrink-0 items-center justify-center text-primary">
+                  {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                 </span>
               </button>
 
@@ -66,7 +50,7 @@ export function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 md:px-6 pb-5 md:pb-6 text-text-mid text-[0.9rem] leading-[1.75] border-t border-primary/[0.06] pt-3.5">
+                    <div className="pb-5 pr-8 text-text-mid text-[0.9rem] leading-[1.75]">
                       {faq.answer}
                     </div>
                   </motion.div>

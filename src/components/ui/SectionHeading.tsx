@@ -23,15 +23,19 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "flex flex-col gap-2.5",
+        "flex flex-col",
         align === "center" ? "items-center text-center mx-auto" : "items-start text-left",
         className
       )}
     >
-      {badge && <Badge variant={isDark ? "dark" : "default"}>{badge}</Badge>}
+      {badge && (
+        <Badge variant={isDark ? "dark" : "default"} className="mb-4">
+          {badge}
+        </Badge>
+      )}
       <h2
         className={cn(
-          "font-serif text-[clamp(1.9rem,3.2vw,2.7rem)] font-bold leading-[1.2]",
+          "font-serif text-[clamp(1.75rem,2.8vw,2.35rem)] font-semibold leading-[1.2] text-balance",
           isDark ? "text-white" : "text-primary-dark"
         )}
       >
@@ -40,8 +44,8 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "max-w-[520px] text-[0.95rem] leading-[1.85]",
-            isDark ? "text-white/60" : "text-text-mid"
+            "mt-3 max-w-[540px] text-[0.95rem] leading-[1.8] text-pretty",
+            isDark ? "text-white/55" : "text-text-mid"
           )}
         >
           {description}

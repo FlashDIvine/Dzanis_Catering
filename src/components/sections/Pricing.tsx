@@ -12,46 +12,42 @@ export function Pricing() {
     <Container id="harga" className="bg-light-bg">
       <SectionHeading
         badge="Harga"
-        title={
-          <>
-            Mulai dari <em className="italic text-accent-dark">Rp18.000/pax</em>
-          </>
-        }
+        title="Mulai dari Rp18.000 / pax"
         description="Fix price, transparan, tidak ada biaya kejutan. Semua paket sudah termasuk ongkir untuk area layanan kami."
       />
 
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3">
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y divide-line border-y border-line sm:divide-y-0">
         {pricing.map((pkg, index) => (
           <motion.div
             key={pkg.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.06 }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
             className={cn(
-              "bg-white rounded-[18px] p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_10px_32px_rgba(26,91,150,0.1)] hover:-translate-y-1",
-              pkg.isFeatured
-                ? "border-[1.5px] border-primary shadow-[0_6px_24px_rgba(26,91,150,0.12)]"
-                : "border border-primary/10"
+              "flex flex-col gap-3 py-7 sm:border-t sm:border-line sm:px-7",
+              pkg.isFeatured ? "sm:bg-primary-pale/50" : ""
             )}
           >
-            <div>
-              <div className="text-[0.75rem] font-bold uppercase tracking-[1px] text-text-light mb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-[0.74rem] font-semibold uppercase tracking-[1px] text-text-mid">
                 {pkg.name}
-              </div>
-
-              <div className="font-serif text-[2.1rem] font-bold text-primary leading-none mb-1">
-                {pkg.price}
-              </div>
-
-              <div className="text-[0.76rem] text-text-light mb-3">
-                {pkg.unit}
-              </div>
-
-              <div className="h-[1px] bg-primary/[0.08] mb-3" />
+              </span>
+              {pkg.isFeatured && (
+                <span className="text-[0.62rem] font-semibold uppercase tracking-[1px] text-accent-dark">
+                  Populer
+                </span>
+              )}
             </div>
 
-            <p className="text-[0.8rem] text-text-mid leading-[1.65]">
+            <div className="flex items-baseline gap-1.5">
+              <span className="font-serif text-[2rem] font-semibold text-primary leading-none">
+                {pkg.price}
+              </span>
+              <span className="text-[0.76rem] text-text-light">{pkg.unit}</span>
+            </div>
+
+            <p className="text-[0.83rem] leading-[1.7] text-text-mid">
               {pkg.description}
             </p>
           </motion.div>
@@ -59,16 +55,16 @@ export function Pricing() {
       </div>
 
       {/* Centered CTA */}
-      <div className="text-center mt-10">
+      <div className="mt-12 flex flex-col items-center gap-3">
         <a
           href={company.contact.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-white rounded-full font-semibold text-[0.92rem] shadow-[0_6px_22px_rgba(26,91,150,0.22)] transition-all duration-200 hover:bg-primary-dark hover:-translate-y-0.5"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-[0.92rem] font-semibold text-white transition-colors duration-200 hover:bg-primary-dark"
         >
           Minta Penawaran Lengkap →
         </a>
-        <p className="text-[0.76rem] text-text-light mt-2.5">
+        <p className="text-[0.78rem] text-text-light">
           Gratis konsultasi · Gratis food tasting · Harga langsung dari kami
         </p>
       </div>
