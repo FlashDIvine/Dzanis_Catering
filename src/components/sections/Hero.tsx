@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { heroData } from "@/data/hero";
-import { Star } from "lucide-react";
+import { Star, Check } from "lucide-react";
 import Image from "next/image";
 
 export function Hero() {
