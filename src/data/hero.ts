@@ -1,14 +1,14 @@
 import { company } from "./company";
 
 export const heroData = {
-  eyebrow: "Catering Puncak · Bogor · Jabodetabek",
+  eyebrow: "Catering Ciayumajakuning (Cirebon · Indramayu · Majalengka · Kuningan)",
   headline: {
     line1: "Jadikan Setiap",
     accent: "Momen Bersama",
     line2: "Lebih Berkesan",
   },
   description:
-    "Nasi box, prasmanan, kambing guling & liwetan — diantar tepat waktu ke villa, venue, atau lokasi acara Anda. Halal MUI, fast response setiap hari.",
+    "Nasi box, prasmanan, kambing guling & liwetan — diantar tepat waktu ke venue, kantor, kediaman, atau lokasi acara Anda di Ciayumajakuning. Halal MUI, fast response setiap hari.",
   cta: {
     primary: "Chat WhatsApp Sekarang",
     secondary: "Lihat Menu ↓",
@@ -32,7 +32,7 @@ export const heroData = {
       },
       {
         title: "Gratis Ongkir",
-        subtitle: "Puncak, Bogor & Jabodetabek",
+        subtitle: "Wilayah Ciayumajakuning",
         emoji: "🚚",
       },
     ],

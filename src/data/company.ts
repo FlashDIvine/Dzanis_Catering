@@ -1,16 +1,22 @@
+export const getWhatsAppLink = (
+  message: string = "Halo Niezar, saya butuh informasi lengkap paket dan harga. Bisa dibantu?"
+) => {
+  return `https://wa.me/6285726331579?text=${encodeURIComponent(message)}`;
+};
+
 export const company = {
   name: "Dzanis Catering",
   brandName: "Dzanis Catering",
   legalName: "PT Dzanis Catering Indonesia",
   logo: "/images/brand/dzanis-logo.png",
   logoLight: "/images/brand/dzanis-logo-light.png",
-  tagline: "Jasa Catering Puncak, Bogor & Jabodetabek — Halal MUI",
+  tagline: "Jasa Catering Ciayumajakuning (Cirebon, Indramayu, Majalengka, Kuningan) — Halal MUI",
   description:
-    "Dzanis Catering menyediakan nasi box, prasmanan, snack, kambing guling & liwetan untuk acara di Puncak, Bogor, dan Jabodetabek. Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
+    "Dzanis Catering menyediakan nasi box, prasmanan, snack, kambing guling & liwetan untuk acara di wilayah Ciayumajakuning (Cirebon, Indramayu, Majalengka, Kuningan). Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
   establishedYear: 2013,
   contact: {
-    whatsapp: "081286803447",
-    whatsappLink: "https://wa.me/6281286803447?text=Halo%20Dzanis%20Katering%2C%20saya%20mau%20tanya%20catering%20untuk%20acara%20saya.%20Bisa%20dibantu%3F",
+    whatsapp: "085726331579",
+    whatsappLink: getWhatsAppLink("Halo Niezar, saya butuh informasi lengkap paket dan harga. Bisa dibantu?"),
     phone: "(0251) 829-8060",
     phoneRaw: "02518298060",
     email: "catering@dzanis.com",
@@ -38,40 +44,28 @@ export const company = {
   },
   serviceAreas: [
     {
-      name: "Puncak & Cisarua",
-      type: "Basis Utama",
+      name: "Cirebon",
+      type: "Kota & Kabupaten",
       isPrimary: true,
-      cities: "Puncak Pass · Cisarua · Megamendung · Tugu · Ciawi · Gadog · Sekitar vila & resort",
+      cities: "Cirebon Kota · Harjamukti · Kejaksan · Kesambi · Lemahwungkuk · Kedawung · Sumber · Plumbon · Weru · Palimanan · Losari",
     },
     {
-      name: "Bogor & Sentul",
-      type: "Basis Utama",
+      name: "Indramayu",
+      type: "Kabupaten",
       isPrimary: true,
-      cities: "Bogor Kota · Cibinong · Sentul City · Babakan Madang · Bogor Raya",
+      cities: "Indramayu Kota · Jatibarang · Haurgeulis · Karangampel · Patrol · Losarang · Sindang · Balongan · Terisi · Kandanghaur",
     },
     {
-      name: "Depok",
-      type: "Area Layanan",
-      isPrimary: false,
-      cities: "Depok Kota · Margonda · Cinere · Cimanggis · Sawangan",
+      name: "Majalengka",
+      type: "Kabupaten",
+      isPrimary: true,
+      cities: "Majalengka Kota · Jatiwangi · Kadipaten · Kertajati · Talaga · Cigasong · Sumberjaya · Dawuan · Rajagaluh · Sukahaji",
     },
     {
-      name: "Bekasi",
-      type: "Area Layanan",
-      isPrimary: false,
-      cities: "Bekasi Kota · Kabupaten Bekasi · Cileungsi · Gunung Putri",
-    },
-    {
-      name: "Tangerang",
-      type: "Area Layanan",
-      isPrimary: false,
-      cities: "Tangerang Kota · Tangerang Selatan · Serpong · BSD",
-    },
-    {
-      name: "Jakarta",
-      type: "Area Layanan",
-      isPrimary: false,
-      cities: "Jakarta Selatan · Jakarta Timur · Untuk acara besar, kami jangkau lebih jauh",
+      name: "Kuningan",
+      type: "Kabupaten",
+      isPrimary: true,
+      cities: "Kuningan Kota · Cigugur · Cilimus · Jalaksana · Kramatmulya · Ciawigebang · Luragung · Bandorasa · Darma · Mandirancan",
     },
   ],
 };

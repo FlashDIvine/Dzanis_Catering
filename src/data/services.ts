@@ -1,3 +1,5 @@
+import { getWhatsAppLink } from "./company";
+
 export type Service = {
   id: string;
   categoryNumber: string;
@@ -7,6 +9,7 @@ export type Service = {
   image: string;
   linkText: string;
   linkHref: string;
+  whatsappMessage: string;
   isWide?: boolean;
 };
 
@@ -19,8 +22,9 @@ export const services: Service[] = [
     description:
       "Disajikan hangat langsung di lokasi acara Anda. Pilihan terbaik untuk pernikahan, gathering, dan reuni keluarga.",
     image: "/images/services/prasmanan.jpg",
-    linkText: "Lihat paket →",
-    linkHref: "#paket",
+    linkText: "Tanya detail",
+    whatsappMessage: "Halo Niezar, saya mau tanya paket prasmanan. Bisa dibantu?",
+    linkHref: getWhatsAppLink("Halo Niezar, saya mau tanya paket prasmanan. Bisa dibantu?"),
     isWide: true,
   },
   {
@@ -31,8 +35,9 @@ export const services: Service[] = [
     description:
       "Kemasan anti tumpah, food grade. Dari Rp20.000/pax. Cocok untuk rapat, seminar, dan acara kantor.",
     image: "/images/services/nasi-box.jpg",
-    linkText: "Lihat paket →",
-    linkHref: "#paket",
+    linkText: "Tanya detail",
+    whatsappMessage: "Halo Niezar, saya mau tanya paket nasi box. Bisa dibantu?",
+    linkHref: getWhatsAppLink("Halo Niezar, saya mau tanya paket nasi box. Bisa dibantu?"),
   },
   {
     id: "service-3",
@@ -42,8 +47,9 @@ export const services: Service[] = [
     description:
       "Show & disajikan di tempat. Hidangan paling istimewa untuk momen kebersamaan yang tak terlupakan.",
     image: "/images/services/kambing-guling.jpg",
-    linkText: "Tanya harga →",
-    linkHref: "https://wa.me/6281286803447?text=Halo%20Dzanis%20Katering%2C%20saya%20mau%20tanya%20paket%20kambing%20guling.",
+    linkText: "Tanya detail",
+    whatsappMessage: "Halo Niezar, saya mau tanya paket kambing guling. Bisa dibantu?",
+    linkHref: getWhatsAppLink("Halo Niezar, saya mau tanya paket kambing guling. Bisa dibantu?"),
   },
   {
     id: "service-4",
@@ -53,8 +59,9 @@ export const services: Service[] = [
     description:
       "Sajian khas Sunda di atas daun pisang — dinikmati lesehan bersama keluarga. Hangat dan tak terlupakan.",
     image: "/images/services/liwetan.jpg",
-    linkText: "Tanya harga →",
-    linkHref: "https://wa.me/6281286803447?text=Halo%20Dzanis%20Katering%2C%20saya%20mau%20tanya%20paket%20liwetan.",
+    linkText: "Tanya detail",
+    whatsappMessage: "Halo Niezar, saya mau tanya paket liwetan. Bisa dibantu?",
+    linkHref: getWhatsAppLink("Halo Niezar, saya mau tanya paket liwetan. Bisa dibantu?"),
   },
   {
     id: "service-5",
@@ -64,8 +71,9 @@ export const services: Service[] = [
     description:
       "Untuk ulang tahun, selamatan, dan acara kantor. Tersedia tampah dan tumpeng mini.",
     image: "/images/services/tumpeng.jpg",
-    linkText: "Lihat paket →",
-    linkHref: "#paket",
+    linkText: "Tanya detail",
+    whatsappMessage: "Halo Niezar, saya mau tanya paket nasi tumpeng. Bisa dibantu?",
+    linkHref: getWhatsAppLink("Halo Niezar, saya mau tanya paket nasi tumpeng. Bisa dibantu?"),
   },
   {
     id: "service-6",
@@ -75,7 +83,8 @@ export const services: Service[] = [
     description:
       "Aneka snack dan coffee break — dari Rp18.000/pax. Cocok untuk seminar dan gathering.",
     image: "/images/services/snack.jpg",
-    linkText: "Lihat paket →",
-    linkHref: "#paket",
+    linkText: "Tanya detail",
+    whatsappMessage: "Halo Niezar, saya mau tanya paket snack & coffee break. Bisa dibantu?",
+    linkHref: getWhatsAppLink("Halo Niezar, saya mau tanya paket snack & coffee break. Bisa dibantu?"),
   },
 ];

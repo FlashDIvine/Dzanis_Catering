@@ -2,26 +2,31 @@
 
 @theme inline {
   --color-primary: #1A5B96;
-  --color-primary-dark: #0F3D6E;
-  --color-primary-deep: #0A2540;
-  --color-primary-light: #2E86DE;
-  --color-primary-pale: #EEF5FC;
+  --color-primary-dark: #0E3B68;
+  --color-primary-deep: #08213D;
+  --color-primary-light: #2A7BC7;
+  --color-primary-pale: #F0F6FC;
   --color-primary-mid: rgba(26, 91, 150, 0.08);
 
-  --color-accent: #10B981;
-  --color-accent-dark: #059669;
-  --color-accent-light: #34D399;
+  --color-accent: #059669;
+  --color-accent-dark: #047857;
+  --color-accent-light: #10B981;
   --color-accent-pale: #ECFDF5;
+  --color-accent-soft: rgba(16, 185, 129, 0.12);
 
   --color-gold: #D97706;
   --color-gold-light: #F59E0B;
+  --color-gold-pale: #FEF3C7;
 
   --color-off-white: #FFFFFF;
-  --color-light-bg: #F4F8FB;
+  --color-warm-white: #FAFAF8;
+  --color-light-bg: #F5F7FA;
+  --color-surface-subtle: #EDF2F7;
 
   --color-text-main: #0F172A;
   --color-text-mid: #475569;
-  --color-text-light: #8898AA;
+  --color-text-light: #64748B;
+  --color-text-muted: #94A3B8;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -39,46 +44,35 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-@keyframes fabPulse {
-  0%, 100% {
-    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.44);
-  }
-  50% {
-    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.44), 0 0 0 12px rgba(37, 211, 102, 0.12);
-  }
+  text-rendering: optimizeLegibility;
 }
 
 @keyframes scrollBounce {
   0%, 100% {
-    transform: rotate(45deg) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: rotate(45deg) translateY(5px);
+    transform: translateY(6px);
   }
 }
 
-@keyframes blink {
+@keyframes subtlePulse {
   0%, 100% {
-    opacity: 1;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.28);
   }
   50% {
-    opacity: 0.2;
+    box-shadow: 0 6px 26px rgba(37, 211, 102, 0.42);
   }
-}
-
-.animate-fab-pulse {
-  animation: fabPulse 2.5s ease infinite;
 }
 
 .animate-scroll-bounce {
-  animation: scrollBounce 2s ease infinite;
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
-.animate-badge-blink {
-  animation: blink 1.8s ease infinite;
+.animate-fab-subtle {
+  animation: subtlePulse 3s ease-in-out infinite;
 }
 
 @utility container-custom {

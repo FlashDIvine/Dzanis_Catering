@@ -18,23 +18,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: `${company.name} | Jasa Catering Puncak, Bogor & Jabodetabek — Halal MUI`,
+  title: `${company.name} | Jasa Catering Ciayumajakuning (Cirebon, Indramayu, Majalengka, Kuningan) — Halal MUI`,
   description:
-    "Dzanis Katering menyediakan nasi box, prasmanan, snack, kambing guling & liwetan untuk acara di Puncak, Bogor, dan Jabodetabek. Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
+    "Dzanis Catering menyediakan nasi box, prasmanan, snack, kambing guling & liwetan untuk acara di Cirebon, Indramayu, Majalengka, dan Kuningan (Ciayumajakuning). Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
   keywords: [
-    "catering puncak",
-    "catering bogor",
-    "nasi box",
-    "prasmanan",
-    "kambing guling",
+    "catering ciayumajakuning",
+    "catering cirebon",
+    "catering indramayu",
+    "catering majalengka",
+    "catering kuningan",
+    "nasi box cirebon",
+    "prasmanan cirebon",
+    "kambing guling cirebon",
     "catering halal",
-    "catering jabodetabek",
-    "dzanis katering",
+    "dzanis catering",
   ],
   openGraph: {
-    title: `${company.name} | Catering Terpercaya Puncak & Jabodetabek`,
+    title: `${company.name} | Catering Terpercaya Ciayumajakuning`,
     description:
-      "Nasi box, prasmanan, snack & kambing guling. Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
+      "Nasi box, prasmanan, snack & kambing guling di Cirebon, Indramayu, Majalengka & Kuningan. Halal MUI, gratis ongkir, tepat waktu sejak 2013.",
     url: "https://dzaniskatering.com",
     siteName: company.name,
     locale: "id_ID",

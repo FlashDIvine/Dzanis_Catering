@@ -4,103 +4,99 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import {
+  Zap,
+  Clock,
+  UtensilsCrossed,
+  MessageSquareCheck,
+  BadgePercent,
+} from "lucide-react";
 
 export function WhyChooseUs() {
   const advantages = [
     {
       title: "Tersertifikasi Halal MUI",
       description:
-        "Seluruh produk kami tersertifikasi halal MUI (ID32110022120450525) — Anda dan tamu dapat menikmati hidangan dengan penuh keyakinan.",
+        "Seluruh proses pengolahan dan bahan tersertifikasi resmi halal MUI (ID32110022120450525). Santap hidangan dengan tenang dan penuh keyakinan.",
+      icon: null,
       iconImage: "/images/brand/halal-cert.png",
-      iconBg: "bg-primary/30",
     },
     {
       title: "CS Fast Response",
       description:
-        "Tim CS kami siap membantu setiap hari pukul 07.00–22.00 WIB, termasuk hari libur. Pertanyaan mendadak pun langsung direspons.",
-      emoji: "⚡",
-      iconBg: "bg-[#25D366]/20",
+        "Tim representatif kami siap melayani setiap hari pukul 07.00–22.00 WIB, termasuk hari libur. Konsultasi menu dan kebutuhan mendadak cepat teratasi.",
+      icon: <Zap className="w-5 h-5 text-accent-light" />,
     },
     {
       title: "Jaminan Tepat Waktu",
       description:
-        "Acara tidak bisa menunggu. Seluruh tim kami berkomitmen mengantar tepat waktu — bahkan sering lebih awal dari jadwal.",
-      emoji: "🕐",
-      iconBg: "bg-primary/30",
+        "Jadwal acara Anda adalah prioritas mutlak kami. Seluruh pengiriman tiba tepat waktu di lokasi villa, gedung, maupun kediaman Anda.",
+      icon: <Clock className="w-5 h-5 text-accent-light" />,
     },
     {
       title: "Gratis Food Tasting",
       description:
-        "Belum yakin dengan rasanya? Kami antar langsung ke tempat Anda untuk food tasting sebelum hari H — tanpa biaya apapun.",
-      emoji: "🍽️",
-      iconBg: "bg-accent/20",
+        "Pastikan rasa dan kualitas sebelum hari H. Kami siap mengantarkan sample food tasting langsung ke lokasi Anda tanpa biaya tambahan.",
+      icon: <UtensilsCrossed className="w-5 h-5 text-accent-light" />,
     },
     {
-      title: "Pemesanan Mudah",
+      title: "Pemesanan Praktis via WA",
       description:
-        "Cukup via WhatsApp atau telepon. Tidak perlu datang langsung — semua bisa diselesaikan dari mana pun Anda berada.",
-      emoji: "📱",
-      iconBg: "bg-primary/30",
+        "Cukup via WhatsApp atau telepon. Tim kami menyusun rincian penawaran, invoice, hingga jadwal pengantaran secara rapi dan instan.",
+      icon: <MessageSquareCheck className="w-5 h-5 text-accent-light" />,
     },
     {
-      title: "Harga Transparan",
+      title: "Harga Transparan & Pasti",
       description:
-        "Semua harga sudah fix price — tidak ada biaya tersembunyi. Rencanakan anggaran acara Anda dengan tenang dan pasti.",
-      emoji: "💰",
-      iconBg: "bg-primary/25",
+        "Semua penawaran sudah jelas tanpa biaya tersembunyi. Rencanakan anggaran acara keluarga maupun instansi Anda dengan nyaman.",
+      icon: <BadgePercent className="w-5 h-5 text-accent-light" />,
     },
   ];
 
   return (
-    <div className="w-full relative overflow-hidden bg-gradient-to-br from-primary-deep via-primary-dark to-[#0D3560]">
-      {/* Decorative Radial Glow */}
-      <div className="absolute -right-32 -top-32 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.08)_0%,transparent_65%)] pointer-events-none" />
-
+    <div className="w-full relative overflow-hidden bg-primary-deep text-white">
       <Container id="tentang" className="bg-transparent">
         <SectionHeading
           theme="dark"
-          badge="Kenapa Dzanis?"
-          title={
-            <>
-              Dipercaya Lebih dari <em className="italic text-accent-light">10 Tahun</em>
-            </>
-          }
-          description="Bukan sekadar makanan — kami menghadirkan ketenangan pikiran. Anda fokus menikmati acara, konsumsi kami yang urus."
+          badge="Keunggulan Layanan"
+          title="Dipercaya Melayani Ribuan Acara Sejak 2013"
+          description="Bukan sekadar sajian makanan — kami menghadirkan ketenangan pikiran agar Anda dapat menikmati momen berharga bersama para tamu."
         />
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px]">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {advantages.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="bg-white/[0.04] border border-white/[0.07] p-7 md:p-8 transition-all duration-300 hover:bg-accent/[0.08] hover:border-accent/30 group"
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:bg-white/[0.08] hover:border-white/20 group flex flex-col justify-between"
             >
-              <div
-                className={`w-12 h-12 rounded-[14px] ${item.iconBg} flex items-center justify-center mb-4.5 overflow-hidden text-2xl`}
-              >
-                {item.iconImage ? (
-                  <Image
-                    src={item.iconImage}
-                    alt={item.title}
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                ) : (
-                  <span>{item.emoji}</span>
-                )}
+              <div>
+                <div className="w-11 h-11 rounded-xl bg-white/10 border border-white/12 flex items-center justify-center mb-5 shrink-0">
+                  {item.iconImage ? (
+                    <Image
+                      src={item.iconImage}
+                      alt={item.title}
+                      width={28}
+                      height={28}
+                      style={{ width: "auto", height: "auto" }}
+                      className="object-contain"
+                    />
+                  ) : (
+                    item.icon
+                  )}
+                </div>
+
+                <h3 className="font-serif text-[1.15rem] font-bold text-white mb-2.5 tracking-tight group-hover:text-accent-light transition-colors">
+                  {item.title}
+                </h3>
+
+                <p className="text-[0.88rem] leading-[1.7] text-white/70">
+                  {item.description}
+                </p>
               </div>
-
-              <h4 className="font-serif text-[1.05rem] font-semibold text-white mb-2">
-                {item.title}
-              </h4>
-
-              <p className="text-[0.82rem] leading-[1.75] text-white/45">
-                {item.description}
-              </p>
             </motion.div>
           ))}
         </div>

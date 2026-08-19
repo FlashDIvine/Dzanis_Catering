@@ -2,140 +2,210 @@
 
 import { motion } from "framer-motion";
 import { heroData } from "@/data/hero";
+import { company } from "@/data/company";
 import Image from "next/image";
+import { MessageCircle, CheckCircle2, ChevronDown, Truck } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-end overflow-hidden pt-28 pb-20 md:pb-24">
-      {/* Background Gradient & Food Photography Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-deep via-primary-dark to-[#0D3560]" />
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-20 mix-blend-luminosity pointer-events-none"
-        style={{ backgroundImage: `url(${heroData.image})` }}
-      />
+    <section className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20">
+      {/* Background Photography with Refined Editorial Vignette */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={heroData.image}
+          alt="Dzanis Catering Buffet & Prasmanan"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center brightness-[0.85] saturate-[1.15]"
+        />
+        {/* Responsive Multi-stop Gradient: subtle on mobile to showcase food photography, rich depth on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/95 via-primary-deep/75 to-primary-deep/30 sm:to-primary-deep/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-deep via-primary-deep/40 to-transparent sm:via-transparent sm:to-primary-deep/40" />
+      </div>
 
-      {/* Decorative Geometric Rings and Radial Glow */}
-      <div className="absolute -right-24 -top-24 w-[700px] h-[700px] rounded-full border border-accent/15 pointer-events-none" />
-      <div className="absolute right-20 top-20 w-[420px] h-[420px] rounded-full border-[60px] border-primary/20 pointer-events-none" />
-      <div className="absolute -left-16 -bottom-16 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(16,185,129,0.12)_0%,transparent_65%)] pointer-events-none" />
-
-      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-6 md:px-16">
-        <div className="grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-16 items-end">
-          {/* Left Column */}
+      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-6 md:px-12 lg:px-16 my-auto">
+        <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-16 items-center">
+          {/* Left Column: Editorial Headline & Actions (Clean & Immersive on Mobile) */}
           <motion.div
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-start"
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-start max-w-2xl lg:max-w-none"
           >
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/12 px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[1.5px] text-accent-light mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-badge-blink" />
-              {heroData.eyebrow}
+            {/* Eyebrow: CIAYUMAJAKUNING on Mobile, Full string on Desktop */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-xs px-3.5 py-1 text-[0.7rem] sm:text-[0.72rem] font-semibold uppercase tracking-[1.8px] text-white/90 mb-4 sm:mb-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-light shrink-0" />
+              <span className="sm:hidden">CIAYUMAJAKUNING</span>
+              <span className="hidden sm:inline">{heroData.eyebrow}</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-[clamp(2.7rem,5.5vw,4.6rem)] font-bold leading-[1.06] text-white mb-5">
-              {heroData.headline.line1} <em className="italic text-accent-light font-serif not-italic-fallback">{heroData.headline.accent}</em> <br className="hidden sm:inline" />
+            <h1 className="font-serif text-[2.2rem] sm:text-[2.8rem] md:text-5xl lg:text-[4.2rem] font-bold leading-[1.12] sm:leading-[1.08] text-white mb-4 sm:mb-5 tracking-tight">
+              {heroData.headline.line1}{" "}
+              <span className="text-accent-light italic font-serif">
+                {heroData.headline.accent}
+              </span>{" "}
+              <br className="hidden sm:inline" />
               {heroData.headline.line2}
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-[1rem] leading-[1.85] text-white/60 max-w-[520px] mb-9 font-sans">
+            {/* Subtitle / Description */}
+            <p className="text-[0.92rem] sm:text-[1.05rem] leading-[1.68] sm:leading-[1.75] text-white/85 max-w-[540px] mb-6 sm:mb-8 font-sans">
               {heroData.description}
             </p>
 
             {/* Call to Actions */}
-            <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto mb-6 sm:mb-8">
               <a
                 href={heroData.cta.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#25D366] text-white font-semibold text-[0.95rem] rounded-full shadow-[0_8px_28px_rgba(37,211,102,0.38)] transition-all duration-200 hover:bg-[#1db954] hover:-translate-y-0.5 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:px-8 sm:py-4 bg-[#25D366] text-white font-semibold text-[0.92rem] sm:text-[0.95rem] rounded-full shadow-md shadow-[#25D366]/20 transition-all duration-200 hover:bg-[#1faa53] hover:-translate-y-0.5 active:scale-98 text-center"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
-                {heroData.cta.primary}
+                <MessageCircle className="w-5 h-5 fill-white shrink-0" />
+                <span>{heroData.cta.primary}</span>
               </a>
               <a
                 href={heroData.cta.menuAnchor}
-                className="inline-flex items-center justify-center px-6 py-3.5 border-[1.5px] border-white/20 text-white/80 font-medium text-[0.95rem] rounded-full transition-colors hover:bg-white/10 hover:text-white w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-6 py-3.5 sm:px-7 sm:py-4 border border-white/30 bg-white/5 backdrop-blur-xs text-white font-medium text-[0.92rem] sm:text-[0.95rem] rounded-full transition-all duration-200 hover:bg-white/15 hover:border-white/50 text-center"
               >
-                {heroData.cta.secondary}
+                <span>{heroData.cta.secondary}</span>
               </a>
+            </div>
+
+            {/* Credibility Micro-badges */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-white/80 text-[0.76rem] sm:text-[0.8rem]">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-accent-light shrink-0" />
+                <span>Food Tasting Gratis</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-accent-light shrink-0" />
+                <span>Tanpa Biaya Tersembunyi</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-accent-light shrink-0" />
+                <span>Fast Response Setiap Hari</span>
+              </div>
             </div>
           </motion.div>
 
-          {/* Right Column: Floating Glass Card */}
+          {/* Right Column: Unified Trust Panel (DESKTOP ONLY - hidden on mobile/tablet) */}
           <motion.div
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="w-full max-w-[400px] mx-auto lg:ml-auto"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="hidden lg:block w-full max-w-[420px] ml-auto"
           >
-            <div className="bg-white/[0.06] border border-white/10 rounded-3xl p-7 md:p-8 backdrop-blur-md shadow-2xl">
-              <div className="font-serif text-[0.9rem] text-white/50 mb-5 tracking-[0.3px]">
-                {heroData.trustCard.title}
+            <div className="bg-primary-deep/90 border border-white/15 rounded-2xl p-6 sm:p-7 shadow-2xl backdrop-blur-md text-white">
+              {/* Panel Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
+                <span className="font-serif text-[0.95rem] font-semibold text-white/90">
+                  {heroData.trustCard.title}
+                </span>
+                <span className="text-[0.7rem] font-medium uppercase tracking-wider text-accent-light bg-accent-soft px-2.5 py-0.5 rounded-full">
+                  Official Partner
+                </span>
               </div>
 
-              {/* 2x2 Stat Grid */}
-              <div className="grid grid-cols-2 gap-2.5 mb-4">
-                {heroData.trustCard.stats.map((stat, i) => (
-                  <div
-                    key={i}
-                    className="bg-accent/10 border border-accent/20 rounded-2xl p-4 text-center"
-                  >
-                    <strong className="block font-serif text-[1.9rem] font-bold text-accent-light leading-none mb-1">
-                      {stat.value}
-                    </strong>
-                    <span className="text-[0.68rem] text-white/45 uppercase tracking-[0.8px] font-semibold">
-                      {stat.label}
-                    </span>
+              {/* 2x2 Metrics Grid with Subtle Dividers */}
+              <div className="grid grid-cols-2 gap-4 divide-x divide-white/10">
+                {/* Left metrics column */}
+                <div className="space-y-4">
+                  <div>
+                    <div className="font-serif text-3xl font-bold text-white leading-none mb-1">
+                      {company.stats.experience}
+                    </div>
+                    <div className="text-[0.75rem] font-medium text-white/60">
+                      {company.stats.experienceLabel} Pengalaman
+                    </div>
                   </div>
-                ))}
+                  <div className="pt-3 border-t border-white/10">
+                    <div className="font-serif text-3xl font-bold text-gold-light leading-none mb-1 flex items-center gap-1">
+                      <span>{company.stats.rating}</span>
+                      <span className="text-xl">★</span>
+                    </div>
+                    <div className="text-[0.75rem] font-medium text-white/60">
+                      Ulasan Google
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right metrics column */}
+                <div className="space-y-4 pl-4">
+                  <div>
+                    <div className="font-serif text-3xl font-bold text-white leading-none mb-1">
+                      {company.stats.events}
+                    </div>
+                    <div className="text-[0.75rem] font-medium text-white/60">
+                      {company.stats.eventsLabel}
+                    </div>
+                  </div>
+                  <div className="pt-3 border-t border-white/10">
+                    <div className="font-serif text-3xl font-bold text-accent-light leading-none mb-1">
+                      {company.stats.onTime}
+                    </div>
+                    <div className="text-[0.75rem] font-medium text-white/60">
+                      Jaminan Tepat Waktu
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Trust Rows */}
-              <div className="space-y-2.5">
-                {heroData.trustCard.certifications.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3.5 bg-white/[0.05] border border-white/[0.08] rounded-2xl p-3.5"
-                  >
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-xl">
-                      {item.icon ? (
-                        <Image
-                          src={item.icon}
-                          alt={item.title}
-                          width={28}
-                          height={28}
-                          className="object-contain"
-                        />
-                      ) : (
-                        <span>{item.emoji}</span>
-                      )}
+              {/* Accreditations & Delivery Section */}
+              <div className="mt-5 pt-4 border-t border-white/10 space-y-3">
+                {/* Halal MUI Row */}
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/8">
+                  <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0 p-1">
+                    <Image
+                      src={company.halal.logo}
+                      alt="Halal MUI Certificate"
+                      width={28}
+                      height={28}
+                      style={{ width: "auto", height: "auto" }}
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[0.82rem] font-semibold text-white truncate">
+                      Tersertifikasi Halal MUI
                     </div>
-                    <div>
-                      <strong className="block text-[0.83rem] font-semibold text-white/85">
-                        {item.title}
-                      </strong>
-                      <span className="text-[0.72rem] text-white/40">{item.subtitle}</span>
+                    <div className="text-[0.7rem] text-white/50 font-mono truncate">
+                      {company.halal.certNumber}
                     </div>
                   </div>
-                ))}
+                  <CheckCircle2 className="w-4 h-4 text-accent-light shrink-0" />
+                </div>
+
+                {/* Free Delivery Row */}
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/8">
+                  <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0 text-accent-light">
+                    <Truck className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[0.82rem] font-semibold text-white">
+                      Gratis Ongkir
+                    </div>
+                    <div className="text-[0.7rem] text-white/50 truncate">
+                      Wilayah Ciayumajakuning
+                    </div>
+                  </div>
+                  <CheckCircle2 className="w-4 h-4 text-accent-light shrink-0" />
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll Down Indicator */}
+      {/* Scroll Down Indicator (Desktop) */}
       <a
         href="#layanan"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-white/35 hover:text-white/70 transition-colors uppercase tracking-[1.5px] text-[0.7rem] font-medium"
+        className="relative z-10 mx-auto mt-6 hidden md:flex flex-col items-center gap-1 text-white/40 hover:text-white/80 transition-colors uppercase tracking-[1.5px] text-[0.68rem] font-medium"
       >
-        <div className="w-5 h-5 border-r-[1.5px] border-b-[1.5px] border-white/35 rotate-45 animate-scroll-bounce" />
+        <span>Jelajahi Menu</span>
+        <ChevronDown className="w-4 h-4 animate-scroll-bounce" />
       </a>
     </section>
   );
