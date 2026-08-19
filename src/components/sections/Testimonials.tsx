@@ -44,7 +44,7 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-5 bg-primary-deep text-white rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden"
+          className="lg:col-span-5 bg-gradient-to-br from-primary-deep to-primary-dark text-white rounded-2xl p-7 sm:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden"
         >
           <Quote className="w-12 h-12 text-accent/20 absolute top-6 right-6" />
 

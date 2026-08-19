@@ -54,7 +54,7 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <div className="w-full relative overflow-hidden bg-primary-deep text-white">
+    <div className="w-full relative overflow-hidden bg-gradient-to-br from-primary-deep via-primary-dark to-primary text-white">
       <Container id="tentang" className="bg-transparent">
         <SectionHeading
           theme="dark"
